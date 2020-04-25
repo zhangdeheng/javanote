@@ -108,6 +108,34 @@ throw语句独立存在时，下面不能定义其他语句，因为执行不到
     }
     
 
+# Annotation（注解）
+是Java提供的一种对元程序中元素关联信息和元数据（metadata）的途径和方法。Annotation是一个接口，程序可以通过反射来获取指定程序中元素的Annotation对象，然后通过该Annotation对象来获取注解中的元素数据信息。
+## 标准元注解
+元注解是负责注解其他注解。Java5.0定义了4个标准的meta-annotation类型，它们被用来提供对其它annotation类型作说明。
 
+@Target修饰的对象范围
+
+    @Target说明了Annotation所修饰的对象范围：Annotation可被用于packages、types(类、接口、枚举、Annotation类型)、类型成员（方法、构造方法、成员变量、枚举值）、方法参数和本地变量（如循环变量、catch参数）。在Annotation类型的声明中使用了
+    target可更加明晰其修饰的目标
+
+@Retention定义被保留的时间长短
+
+    Retention定义了该Annotation被保留的时间长短：表示需要在什么级别保存注解信息，用于描述注解的声明周期（既：被描述的注解在什么范围内有效），取值（RetentionPoicy）由：
+ 
+    SOURCE:在源文件中有效（即源文件保留）
+    CLASS:在class文件中有效（即class保留）
+    RUNTIME:在运行时保留
+    
+@Documented 描述-Javadoc
+
+    @Documented 用于描述其它类型的annotation应该被作为被标注的程序成员的公共API，因此可以被例如javadoc此类的工具文档化
+
+@Inherited 阐述了某个被标注的类型是被继承
+    
+    @Inherited元注解是一个标记注解，@Inherited阐述了某个被标注的类型是被继承。如果一个使用了@Inherited修饰的
+    annotation类型被用于一个class，则这个annotation将被用于该class的子类    
+    
+如果没有用来读取注解的方法和工作，那么注解也就不会比注释更有用处了。使用注解的过程中，很重要的一部分就是创建于使用注解处理器。java se5扩展了反射机制的API，以帮助程序员快速的构造自定义注解处理器。
+例子：参考com.share.basic.annotation.*
 
 
