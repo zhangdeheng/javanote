@@ -1,4 +1,6 @@
-package com.share.basic.exception;
+package com.share.basic.reflec;
+
+import com.share.basic.exception.DisposeException;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
