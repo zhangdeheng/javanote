@@ -7,6 +7,15 @@ package com.share.basic.exception;
  * 异常处理方式
  */
 public class DisposeException {
+
+    private int reflec;
+
+    public DisposeException(int reflec) {
+        this.reflec = reflec;
+    }
+
+    public DisposeException(){}
+
     public static void throwDemo(String s){
         if(s.equals("abc")){
             throw new NumberFormatException();
